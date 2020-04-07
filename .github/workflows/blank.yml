@@ -31,3 +31,6 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+
+    - name: read a secret
+      run: echo ${{ secrets.SAMPLE_JSON_BASE64 }}
