@@ -33,6 +33,7 @@ jobs:
         echo test, and deploy your project.
 
     - name: read a secret
-      run: echo $SAMPLE | base64 -d
+      run: |
+        echo $SAMPLE | base64 -d | jq .
       env:
         SAMPLE: ${{ secrets.SAMPLE_JSON_BASE64 }}
