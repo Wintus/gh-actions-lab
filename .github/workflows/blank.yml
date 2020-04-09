@@ -34,7 +34,8 @@ jobs:
 
     - name: read a secret
       run: |
-        echo $SAMPLE | base64 -d > sample.json
-        jq . sample.json
+        echo $SAMPLE | base64 -d > $OUT
+        jq . $OUT
       env:
+        OUT: sample.json
         SAMPLE: ${{ secrets.SAMPLE_JSON_BASE64 }}
